@@ -6,6 +6,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <cmath>
 #include "../include/task.h"
 
 Shop::Shop(int maxCheckouts, double spawnIntensity, int itemTime, int averageItems, int maxClients) {
