@@ -9,3 +9,12 @@ target_compile_definitions(${PROJECT_NAME}.test
 
 install(TARGETS ${PROJECT_NAME}.test
         DESTINATION "${tool_dest}")
+
+#Add the google test subdirectory
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/googletest")
+
+#include googletest/include dir
+include_directories("${CMAKE_CURRENT_LIST_DIR}/googletest/googletest/include")
+
+#include the googlemock/include dir
+include_directories("${CMAKE_CURRENT_LIST_DIR}/googletest/googlemock/include")
