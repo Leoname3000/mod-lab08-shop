@@ -178,17 +178,17 @@ double Shop::TheoreticalIdlingProbability() {
     int n = maxCheckouts;
     int m = maxClients;
     for (int i = 0; i <= n; i++) {
-        result += pow(rho, i) / Factorial(i);
+        result += std::pow(rho, i) / Factorial(i);
     }
     for (int i = 1; i <= m; i++) {
-        result += pow(rho, n + i) / (pow(n, i) * Factorial(n));
+        result += std::pow(rho, n + i) / (pow(n, i) * Factorial(n));
     }
-    result = pow(result, -1);
+    result = std::pow(result, -1);
     return result;
 }
 double Shop::TheoreticalRejectionProbability() {
     double rho = Rho(TheoreticalLambda(), TheoreticalMu());
     int n = maxCheckouts;
     int m = maxClients;
-    return (pow(rho, n + m) * TheoreticalIdlingProbability()) / (pow(n, m) * Factorial(n));
+    return (std::pow(rho, n + m) * TheoreticalIdlingProbability()) / (std::pow(n, m) * Factorial(n));
 }
